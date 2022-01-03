@@ -8,10 +8,16 @@ export interface StockInterface {
   changeInPercent: number;
 }
 
+export interface NewsInterface {
+  url: string;
+  title: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class StocksService {
+    
 
   stocks: Array<string> = ['AAPL', 'GOOG', 'FB', 'AMZN', 'TWTR'];
   service: string = 'https://angular2-in-action-api.herokuapp.com';
@@ -34,5 +40,9 @@ export class StocksService {
 
   load(symbols: Array<string>) {
     return this.http.get<Array<StockInterface>>(this.service + '/stocks/snapshot?symbols=' + symbols.join());
+  }
+
+  getNewsSnapshot(source = 'the-wall-street-journal') {
+    return this.http.get<NewsInterface>(this.service + '/stocks/news/snapshot?source=' + source);
   }
 }

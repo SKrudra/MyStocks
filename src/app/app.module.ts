@@ -11,6 +11,10 @@ import { SummaryComponent } from './components/summary/summary.component';
 import { CardTypeDirective } from './directives/card-type.directive';
 import { CardHoverDirective } from './directives/card-hover.directive';
 import { DelayDirective } from './directives/delay.directive';
+import { ChangePipe } from './pipes/change.pipe';
+import { CurrencyPipe, PercentPipe } from '@angular/common';
+import { ChangeDetectorPipe } from './pipes/change-detector.pipe';
+import { NewsPipe } from './pipes/news.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,10 @@ import { DelayDirective } from './directives/delay.directive';
     SummaryComponent,
     CardTypeDirective,
     CardHoverDirective,
-    DelayDirective
+    DelayDirective,
+    ChangePipe,
+    ChangeDetectorPipe,
+    NewsPipe
   ],
   imports: [
     BrowserModule,
@@ -28,7 +35,7 @@ import { DelayDirective } from './directives/delay.directive';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [CurrencyPipe, PercentPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
