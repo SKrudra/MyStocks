@@ -8,13 +8,19 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ManageComponent } from './components/manage/manage.component';
 import { SummaryComponent } from './components/summary/summary.component';
+import { CardTypeDirective } from './directives/card-type.directive';
+import { CardHoverDirective } from './directives/card-hover.directive';
+import { DelayDirective } from './directives/delay.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     ManageComponent,
-    SummaryComponent
+    SummaryComponent,
+    CardTypeDirective,
+    CardHoverDirective,
+    DelayDirective
   ],
   imports: [
     BrowserModule,
