@@ -30,7 +30,7 @@ import { NewsPipe } from './pipes/news.pipe';
     NewsPipe
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
     FormsModule
